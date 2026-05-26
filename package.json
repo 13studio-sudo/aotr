@@ -1,0 +1,17 @@
+{
+  "name": "aotr",
+  "version": "0.0.27",
+  "description": "AOTR — Art of the Race. Endless rhythm-run on a Möbius band.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "dependencies": {
+    "three": "^0.160.0"
+  }
+}

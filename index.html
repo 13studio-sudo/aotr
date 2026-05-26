@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>AOTR — ART OF THE RACE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;700&family=Anton&family=Barlow:wght@400;500;700&family=Rubik+Glitch&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/ui/layout.css" />
+</head>
+<body>
+
+  <canvas id="canvas"></canvas>
+
+  <!-- Hamburger DEVP toggle -->
+  <button id="dev-toggle" class="dev-square dev-hamburger" aria-expanded="false" title="DEVP">
+    <span class="hamburger-bars">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+
+  <!-- HUD: live score (big number) -->
+  <div class="hud-kph-block" id="hud-kph-block">
+    <div class="hud-kph" id="hud-kph">0</div>
+  </div>
+
+  <!-- DEVP panel -->
+  <div id="dev-panel" class="dev-panel" hidden></div>
+
+  <!-- Loading + click-to-start (single overlay, two states) -->
+  <div id="overlay-loading" class="overlay">
+    <div class="loading-frame">
+      <div class="aotr-logo" id="aotr-logo-loading"></div>
+      <div class="loading-label" id="loading-label">LOADING</div>
+      <div class="loading-bar" id="loading-bar"><div class="loading-bar-fill" id="loading-fill"></div></div>
+      <div class="loading-pct" id="loading-pct">0%</div>
+      <button id="loading-start" class="btn-primary btn-large click-to-start" hidden>CLICK TO START</button>
+    </div>
+  </div>
+
+  <!-- Game over — top KPH + retry only -->
+  <div id="overlay-gameover" class="overlay" hidden>
+    <div class="end-frame">
+      <div class="end-title gameover-title">CRASHED</div>
+      <div class="gameover-score">
+        <div class="gameover-score-label">TOP SPEED</div>
+        <div class="gameover-score-value">
+          <span id="gameover-top-kph">0</span>
+        </div>
+      </div>
+      <button id="gameover-reload" class="btn-primary">FRESH RELOAD</button>
+    </div>
+  </div>
+
+  <!-- Gyro prompt -->
+  <div id="overlay-gyro" class="overlay" hidden>
+    <div class="gyro-frame">
+      <div class="gyro-title">TILT TO STEER</div>
+      <div class="gyro-detail">
+        TILT YOUR PHONE LEFT/RIGHT TO MOVE BETWEEN LANES.
+        TAP THE SCREEN TO JUMP.
+      </div>
+      <div class="gyro-buttons">
+        <button id="gyro-allow" class="btn-primary">ALLOW</button>
+        <button id="gyro-skip" class="btn-secondary">SKIP</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
